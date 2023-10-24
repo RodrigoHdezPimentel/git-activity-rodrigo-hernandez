@@ -5,12 +5,12 @@ import java.util.ArrayList;
 public class Main {
 
 	public static void main(String[] args) {
-		Cuenta_Bancaria cb = new Cuenta_Bancaria();
+		Cuenta_Bancaria CuenBan = new Cuenta_Bancaria();
 		
 		ArrayList<Hilo_Cliente> clientes = new ArrayList<Hilo_Cliente>();
 		
 		for(int x = 0; x < 25; x++) {
-			Hilo_Cliente cliente = new Hilo_Cliente(cb);
+			Hilo_Cliente cliente = new Hilo_Cliente(CuenBan);
 			clientes.add(cliente);
 			cliente.start();
 		}
@@ -20,9 +20,9 @@ public class Main {
 			}
 		}catch (InterruptedException e) {
 		}
-		System.out.println(cb.getSaldo());
-		System.out.println(cb.getRegistro());
-		System.out.println(cb.getNumIngresos());
+		System.out.println(CuenBan.getSaldo());
+		System.out.println(CuenBan.getRegistro());
+		System.out.println(CuenBan.getNumIngresos());
 	}
 
 }
